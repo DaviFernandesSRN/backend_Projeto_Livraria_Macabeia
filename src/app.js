@@ -15,16 +15,17 @@ db.once("open", () => {
 const app = express();
 //body-parser usando o express
 app.use(express.json())
-//usando a rota 
+app.use(cors())
+
 routes(app);
 
 
-app.use((req, res, next) =>{
-    res.header("Access-Control-Allow","*");
-    res.header("Access-Control-Allow-Methods","GET, PUT, POST, DELETE");
-    app.use(cors())
-    next();
-});
+// app.use((req, res, next) =>{
+//     res.header("Access-Control-Allow","*");
+//     res.header("Access-Control-Allow-Methods","GET, PUT, POST, DELETE");
+    
+//     next();
+// });
 
 
 export default app;
