@@ -2,10 +2,7 @@ import livros from "../models/Livros.js"
 
 class LivroController {
         //listar vendas appget
-    static listarLivros = (req, res, next) => {
-        res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-        next();
+    static listarLivros = (req, res) => {   
         livros.find((err, livros) => {
             res.status(200).json(livros)
     })}
