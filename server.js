@@ -1,4 +1,4 @@
-import app from './src/Controllers/app.js'
+import app from './src/Controllers/app.js';
 const port = process.env.PORT || 8000;
 
 
