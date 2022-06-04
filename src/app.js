@@ -1,18 +1,9 @@
 import express from "express"; 
 ////conexão com o banco de dados feita pelo mongoose
-import db from "../config/dbconnect.js"
+import db from "./config/dbconnect.js"
 //importando o arquivo de rotas 
-import routes from "../routes/index.js"
+import routes from "./routes/index.js"
 import cors from 'cors';
-
-app.use((req, res, next) =>{
-    res.header("Access-Control-Allow","*");
-    res.header("Access-Control-Allow-Methods","GET, PUT, POST, DELETE");
-    app.use(cors())
-    next();
-});
-
-
 
 
 db.on("error", console.log.bind(console, 'Erro de conexão com banco de dados'))
@@ -27,6 +18,13 @@ app.use(express.json())
 //usando a rota 
 routes(app);
 
+
+app.use((req, res, next) =>{
+    res.header("Access-Control-Allow","*");
+    res.header("Access-Control-Allow-Methods","GET, PUT, POST, DELETE");
+    app.use(cors())
+    next();
+});
 
 
 export default app;
