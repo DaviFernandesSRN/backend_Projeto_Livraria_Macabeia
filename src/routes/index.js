@@ -1,6 +1,6 @@
 import express from "express";
 import livros from "../routes/livroRoutes.js";
-
+import clientes from "../routes/clienteRoutes.js";
 
 const routes = (app) => {
     app.route('/').get((req, res) => {
@@ -11,7 +11,7 @@ app.use(
     express.json(),
 
     livros,
-   
+    clientes
     
 )
 }
