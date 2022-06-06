@@ -9,6 +9,7 @@ router
     .post("/clientes", ClienteController.cadastrarCliente)
     .put("/clientes/:id", ClienteController.atualizarCliente)
     .delete("/clientes/:id", ClienteController.excluirCliente)
+    .get("/clientes/email/:email", ClienteController.listarClientesEmail)
 
 
 

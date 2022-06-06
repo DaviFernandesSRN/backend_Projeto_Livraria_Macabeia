@@ -47,6 +47,18 @@ static atualizarCliente = (req, res) => {
     })
 }
 
+static listarClientesEmail = (req, res) => {
+    const email = req.params.email;
+    clientes.findOne({ email: email }, (err, clientes) => {
+      if (err) {
+        res
+          .status(400).json(`{ message: ${err.message} - clientes não localizada. }`);
+      } else {
+        res.status(200).json(clientes);
+      }
+    });
+  }
+
 static excluirCliente = (req, res) =>{
     const id = req.params.id;
 
