@@ -18,6 +18,8 @@ static listarCliente = (req, res) => {
      } })
     }
 
+    
+
            //cadastrar estoque 
            static cadastrarCliente = (req, res) => {
             let client = new clientes(req.body);

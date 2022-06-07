@@ -17,6 +17,17 @@ class LivroController {
             }
         })
       }
+
+      static listarLivrosName = (req, res) => {
+        const title = req.params.titulo;
+        livros.find({titulo:title}, (err, livros) => {
+        if(err) {
+        res.status(400).send({message: `${err.message} - livro não localizado.`})
+        } else {
+        res.status(200).send(livros);
+    }
+})
+}
             //cadastrar vendas 
     static cadastrarLivros = (req, res) => {
     let livro = new livros(req.body);

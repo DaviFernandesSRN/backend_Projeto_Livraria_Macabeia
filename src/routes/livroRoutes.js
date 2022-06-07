@@ -9,6 +9,7 @@ router
     .post("/livros", LivroController.cadastrarLivros)
     .put("/livros/:id", LivroController.atualizarLivros)
     .delete("/livros/:id", LivroController.excluirLivros)
+    .get("/livros/titulo/:titulo", LivroController.listarLivrosName)
 
 
 
